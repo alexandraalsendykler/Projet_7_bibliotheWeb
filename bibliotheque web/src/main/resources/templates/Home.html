@@ -22,13 +22,11 @@
 			<th>Auteur</th>
 			<th>Résumé</th>
 
-		</tr>
-		<tr th:each="site: ${sites}">
-			<td><a th:href="@{'/site/'+${site.id}}" th:text="${site.nom}">Nom</a></td>
-			<td th:text="${site.description}">Description</td>
-			<td th:if="${site.officiel == true}">Oui</td>
-			<td th:unless="${site.officiel == true}">Non</td>
-
+		 </tr>
+		<tr th:each="livre: ${livres}">
+			<td th:text="${livre.titre}"></td>
+			<td th:text="${livre.auteur}"></td>
+		<td th:text="${livre.resume}"></td>
 		</tr>
 	</table>
 
