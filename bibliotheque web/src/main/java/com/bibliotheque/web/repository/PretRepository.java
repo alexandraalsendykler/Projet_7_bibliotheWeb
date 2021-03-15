@@ -1,5 +1,5 @@
 package com.bibliotheque.web.repository;
 
-public interface PretRepository {
+public class PretRepository {
 
 }

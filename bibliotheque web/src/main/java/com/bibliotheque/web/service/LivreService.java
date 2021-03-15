@@ -20,7 +20,7 @@ public class LivreService {
 	}*/
 
 	public Iterable<Livre> getLivres() {
-		return livreProxy.getlivre();
+		return livreProxy.getLivres();
 	}
 /*
 	public void deleteLivre(final int id) {

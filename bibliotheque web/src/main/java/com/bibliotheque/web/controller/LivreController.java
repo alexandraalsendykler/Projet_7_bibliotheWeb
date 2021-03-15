@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.bibliotheque.web.model.Livre;
-import com.bibliotheque.web.model.LivreProxy;
 import com.bibliotheque.web.service.LivreService;
 
 

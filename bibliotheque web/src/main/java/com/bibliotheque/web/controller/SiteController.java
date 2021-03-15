@@ -1,5 +1,5 @@
 package com.bibliotheque.web.controller;
 
-public interface SiteController {
+public class SiteController {
 
 }

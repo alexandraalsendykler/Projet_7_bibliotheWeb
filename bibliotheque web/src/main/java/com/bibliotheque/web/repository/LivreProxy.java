@@ -18,7 +18,7 @@ public class LivreProxy {
 	@Autowired
 	private CustomProperties props;
 	
-	 public Iterable<Livre> getlivre() {
+	 public Iterable<Livre> getLivres() {
 	        String baseApiUrl = props.getApiUrl();
 	        String getLivresUrl = baseApiUrl + "/Livres";
 

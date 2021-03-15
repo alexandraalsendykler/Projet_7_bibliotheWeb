@@ -1,5 +1,5 @@
 package com.bibliotheque.web.service;
 
-public interface PretService {
+public class PretService {
 
 }
