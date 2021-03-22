@@ -21,13 +21,13 @@ public class UtilisateurController {
 
 	@GetMapping(value = "/connexion")
 	public String seConnecter(Model model) {
-		model.addAttribute("users", new Utilisateur());
+	
 		return "seConnecter";
 	}
 
 	@PostMapping("/seConnecter")
-	public ModelAndView seConnecter(@ModelAttribute Utilisateur user, ModelMap model, HttpSession session) {
-		Utilisateur utilisateur = utilisateurService.getLogin(user); // user.getemail 
+	public ModelAndView seConnecter(@ModelAttribute String email, ModelMap model, HttpSession session) {
+		Utilisateur utilisateur = utilisateurService.getLogin(email); 
 		if (utilisateur.getId() != null) {
 			session.setAttribute("user", utilisateur); // rajouter vérification MDP avec bcrypt
 			return new ModelAndView("redirect:/"); // redirect sur page profil et devoir afficher les prêts 

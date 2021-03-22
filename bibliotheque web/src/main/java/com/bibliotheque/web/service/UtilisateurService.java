@@ -15,8 +15,8 @@ public class UtilisateurService {
 	@Autowired
 	private UtilisateurProxy utilisateurProxy;
 
-	public Utilisateur getLogin(Utilisateur loginUtilisateur) {
-		return utilisateurProxy.getLogin(loginUtilisateur);
+	public Utilisateur getLogin(String email) {
+		return utilisateurProxy.getLogin(email);
 	}
 
 }
