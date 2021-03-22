@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.bibliotheque.web.model.Livre;
 import com.bibliotheque.web.service.LivreService;
 
-
-
 @Controller
 public class LivreController {
 	@Autowired
 	private LivreService livreService;
-	
 	
 	@GetMapping("/")
 	public String home(Model model) {

@@ -2,30 +2,14 @@ package com.bibliotheque.web.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-
-@Entity
 public class Utilisateur {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUtilisateur")
-	
-	@OneToMany(cascade = {CascadeType.ALL})
-	@JoinColumn(name = "idUtilisateur")
 	private List<Pret> prets; 
 	
 	private Integer id;
 	private String prenom;
 	private String email;
-	private String MotDePasse;
+	private String motDePasse;
 
 	public List<Pret> getPrets() {
 		return prets;
@@ -60,10 +44,10 @@ public class Utilisateur {
 	}
 
 	public String getMotDePasse() {
-		return MotDePasse;
+		return motDePasse;
 	}
 
 	public void setMotDePasse(String motDePasse) {
-		MotDePasse = motDePasse;
+		this.motDePasse = motDePasse;
 	}
 }

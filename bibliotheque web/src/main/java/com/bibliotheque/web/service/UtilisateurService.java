@@ -1,5 +1,22 @@
 package com.bibliotheque.web.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bibliotheque.web.model.Utilisateur;
+import com.bibliotheque.web.repository.UtilisateurProxy;
+
+import lombok.Data;
+
+@Data
+@Service
 public class UtilisateurService {
+
+	@Autowired
+	private UtilisateurProxy utilisateurProxy;
+
+	public Utilisateur getLogin(Utilisateur loginUtilisateur) {
+		return utilisateurProxy.getLogin(loginUtilisateur);
+	}
 
 }
