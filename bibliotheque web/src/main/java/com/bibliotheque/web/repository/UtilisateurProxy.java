@@ -24,7 +24,7 @@ public class UtilisateurProxy {
 	public Utilisateur getLogin(String email) {
         String baseApiUrl = props.getApiUrl();
         String getLoginUrl = baseApiUrl + "/seconnecter?email="+email;
-	
+        System.out.println(getLoginUrl); // à virer pour tester si données apparaissent dans console 
         RestTemplate restTemplate = new RestTemplate();
      //   HttpEntity<String> request = new HttpEntity<>(email);
         ResponseEntity<Utilisateur> response = restTemplate.exchange(
@@ -33,7 +33,7 @@ public class UtilisateurProxy {
                 null,
                 new ParameterizedTypeReference<Utilisateur>() {}
                 );
-        
+        System.out.println(response.getBody());
         return response.getBody(); 
     }
 
