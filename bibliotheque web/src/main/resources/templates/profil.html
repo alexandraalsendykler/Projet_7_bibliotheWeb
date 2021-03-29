@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-
 <meta charset="UTF-8">
 
 <title>Profil</title>
@@ -17,19 +15,52 @@
 
 <body>
 
+	<nav class="navbar navbar-light " style="background-color: #fff;">
+
+		<a class="navbar-brand" href="/">
+			<h1>Bibliothèque OpenClassrooms</h1>
+		</a>
+
+		<ul class="nav justify-content-end ">
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">Les
+					livres disponibles</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">Les
+					auteurs</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">A
+					propos</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:if="${session.isEmpty()}">Inscription</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:if="${session.isEmpty()}">Connexion</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:unless="${session.isEmpty()}"> Profil</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:unless="${session.isEmpty()}">Déconnexion</a></li>
+		</ul>
+
+	</nav>
+	<img class=" img-fluid" th:src="@{/Img/testlivre.jpg}" alt=""
+		style="width: 100%; height: auto">
+
 	<div class="row" style="margin-top: 15px">
 		<div class="container">
-			<div class="col-sm-8 offset-sm-4">
+			<div class="col-sm-6 offset-sm-3">
 				<div class="card text-center">
 					<div class="card-header">
-						<h2 class="font-weight-bold">Profil membre bibliotheque</h2>
-						<span th:text="${connectedUser.email}"></span>
-						</h2>
+						<h2 class="font-weight-bold">Profil membre bibliothèque</h2>
 					</div>
-					<div class="card-body">
+					<span th:text="${connectedUser.email}"></span>
 
+					<div class="card-body">
 						<div class="card text-center">
-							<table class="table table-sm table-responsive">
+							<table class="table table-sm">
 								<tr>
 									<th>reservation</th>
 									<th>date de réservation</th>
@@ -37,10 +68,19 @@
 
 								</tr>
 								<tr th:each="pret: ${connectedUser.prets}">
-									<td><a th:href="@{'/pret/'+${pret.id}}"
-										>Reservation</a></td>
-									<td th:text="${#dates.format(pret.dateReservation, 'dd/MM/yyyy')}"></td>
+									<td><a th:href="@{'/pret/'+${pret.id}}">Reservation</a></td>
+									<td
+										th:text="${#dates.format(pret.dateReservation, 'dd/MM/yyyy')}"></td>
 									<td th:text="${#dates.format(pret.dateDeFin, 'dd/MM/yyyy')}"></td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

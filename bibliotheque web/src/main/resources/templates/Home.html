@@ -15,6 +15,41 @@
 
 <body>
 
+	<nav class="navbar navbar-light " style="background-color: #fff;">
+
+		<a class="navbar-brand" href="/">
+			<h1>Bibliothèque OpenClassrooms</h1>
+		</a>
+
+		<ul class="nav justify-content-end ">
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">Les
+					livres disponibles</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">Les
+					auteurs</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href="">A
+					propos</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:if="${session.isEmpty()}">Inscription</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:if="${session.isEmpty()}">Connexion</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:unless="${session.isEmpty()}"> Profil</a></li>
+
+			<li class="nav-item"><a class="nav-link text-dark" href=""
+				th:unless="${session.isEmpty()}">Déconnexion</a></li>
+		</ul>
+	</nav>
+	<img class=" img-fluid" th:src="@{/Img/testlivre.jpg}" alt=""
+		style="width: 100%; height: auto">
+
+<div class="row" style="margin-top: 15px">
+		<div class="col-sm-6 offset-sm-3">
 	<table class="table table-sm">
 
 		<tr>
@@ -22,13 +57,14 @@
 			<th>Auteur</th>
 			<th>Résumé</th>
 
-		 </tr>
+		</tr>
 		<tr th:each="livre: ${livres}">
 			<td th:text="${livre.titre}"></td>
 			<td th:text="${livre.auteur}"></td>
-		<td th:text="${livre.resume}"></td>
+			<td th:text="${livre.resume}"></td>
 		</tr>
 	</table>
-
+</div>
+</div>
 </body>
 </html>
