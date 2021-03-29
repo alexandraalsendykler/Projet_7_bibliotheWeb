@@ -2,31 +2,16 @@ package com.bibliotheque.web.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Pret {
 
-	private Utilisateur utilisateurs;
-
-	private Exemplaire exemplaires;
-
-	public Exemplaire getExemplaires() {
-		return exemplaires;
-	}
-
-	public void setExemplaires(Exemplaire exemplaires) {
-		this.exemplaires = exemplaires;
-	}
-
-	public Utilisateur getUtilisateurs() {
-		return utilisateurs;
-	}
-
-	public void setUtilisateurs(Utilisateur utilisateurs) {
-		this.utilisateurs = utilisateurs;
-	}
-
 	private Integer id;
-	private Date DateDeFin;
-	private Boolean Statut;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dateReservation;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dateDeFin;
+	private Boolean disponibilite;
 
 	public Integer getId() {
 		return id;
@@ -35,21 +20,29 @@ public class Pret {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public Date getDateReservation() {
+		return dateReservation;
+	}
+
+	public void setDateReservation(Date dateReservation) {
+		this.dateReservation = dateReservation;
+	}
 
 	public Date getDateDeFin() {
-		return DateDeFin;
+		return dateDeFin;
 	}
 
 	public void setDateDeFin(Date dateDeFin) {
-		DateDeFin = dateDeFin;
+		this.dateDeFin = dateDeFin;
 	}
 
-	public Boolean getStatut() {
-		return Statut;
+	public Boolean getDisponibilite() {
+		return disponibilite;
 	}
 
-	public void setStatut(Boolean statut) {
-		Statut = statut;
+	public void setDisponibilite(Boolean disponibilite) {
+		this.disponibilite = disponibilite;
 	}
 
 }

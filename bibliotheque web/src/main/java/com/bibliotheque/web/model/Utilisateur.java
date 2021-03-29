@@ -4,12 +4,13 @@ import java.util.List;
 
 public class Utilisateur {
 
-	private List<Pret> prets; 
-	
 	private Integer id;
 	private String prenom;
 	private String email;
 	private String motDePasse;
+	
+
+	private List<Pret> prets; 
 
 	public List<Pret> getPrets() {
 		return prets;

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,7 +23,6 @@ public class UtilisateurController {
 
 	@GetMapping(value = "/connexion")
 	public String seConnecter(Model model) {
-
 		return "seConnecter";
 	}
 
@@ -37,10 +35,20 @@ public class UtilisateurController {
 			boolean isPasswordMatch = encoder.matches(password, utilisateur.getMotDePasse());
 			System.out.println(isPasswordMatch);
 			if (isPasswordMatch == true) {
-				session.setAttribute("user", utilisateur); // rajouter vérification MDP avec bcrypt
-				return new ModelAndView("redirect:/"); // redirect sur page profil et devoir afficher les prêts
+				session.setAttribute("user", utilisateur);
+				return new ModelAndView("redirect:/profil"); // redirect sur page profil et devoir afficher les prêts
 			}
 		}
 		return new ModelAndView("redirect:/connexion", model);
+	}
+
+	@GetMapping("/profil")
+	public String profil(Model model, HttpSession session) {
+		Utilisateur connectedUser = (Utilisateur) session.getAttribute("user");
+		if (connectedUser != null) {
+			model.addAttribute("connectedUser", connectedUser);
+			return "profil";
+		}
+		return ("redirect:/connexion");
 	}
 }

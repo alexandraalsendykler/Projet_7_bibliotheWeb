@@ -18,7 +18,7 @@ public class PretProxy {
 	@Autowired
 	private CustomProperties props;
 	
-	 public Iterable<Pret> getPrets() {
+	 public Iterable<Pret> getPrets(Integer idUtilisateur) {
 	        String baseApiUrl = props.getApiUrl();
 	        String getPretsUrl = baseApiUrl + "/Prets";
 

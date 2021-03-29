@@ -23,7 +23,7 @@
 				<div class="card text-center">
 					<div class="card-header">
 						<h2 class="font-weight-bold">Profil membre bibliotheque</h2>
-						th:utext="${connectedUser.email}"></span>
+						<span th:text="${connectedUser.email}"></span>
 						</h2>
 					</div>
 					<div class="card-body">
@@ -31,16 +31,16 @@
 						<div class="card text-center">
 							<table class="table table-sm table-responsive">
 								<tr>
-									<th>titre</th>
-									<th>auteur</th>
-									<th>resume</th>
+									<th>reservation</th>
+									<th>date de réservation</th>
+									<th>date de fin</th>
 
 								</tr>
-								<tr th:each="pret: ${pret}">
-									<td><a th:href="@{'/pret/'+${pret}}"
-										th:text="${pret.titre}"></a></td>
-									<td th:text="${pret.auteur}">Auteur</td>
-									<td th:text="${pret.resume}">Résumé</td>
+								<tr th:each="pret: ${connectedUser.prets}">
+									<td><a th:href="@{'/pret/'+${pret.id}}"
+										>Reservation</a></td>
+									<td th:text="${#dates.format(pret.dateReservation, 'dd/MM/yyyy')}"></td>
+									<td th:text="${#dates.format(pret.dateDeFin, 'dd/MM/yyyy')}"></td>
 </body>
 
 </html>
