@@ -21,8 +21,8 @@ public class PretController {
 	@GetMapping(value = "/confirmationprolongation/{id}")
 	public String confirmationprolongation(@PathVariable("id") final int id, Model model) {
 		Optional<Pret> pret = pretService.getPret(id);
-		model.addAttribute("prets", pret);
-		return "confirmationprolongation";
+		model.addAttribute("prets", pret.get());
+		return "prolongerreservation";
 	}
 	@GetMapping(value = "/prolonger/{id}")
 	public String prolonger(@PathVariable("id") final int id, Model model) {
@@ -30,4 +30,6 @@ public class PretController {
 		model.addAttribute("prets", pret);
 		return ("redirect:/profil");
 	}
+	
+	
 }

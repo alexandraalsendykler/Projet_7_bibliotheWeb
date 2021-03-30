@@ -33,4 +33,8 @@ public class PretService {
 	public void setPretProxy(PretProxy pretProxy) {
 		this.pretProxy = pretProxy;
 	}
+	public Optional<Pret> saveProlongation(Integer id) {
+		return pretProxy.saveProlongation(id);
+
+	}
 }

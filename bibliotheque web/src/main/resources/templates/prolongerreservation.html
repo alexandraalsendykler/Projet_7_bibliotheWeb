@@ -57,9 +57,9 @@
 						<h3 class="font-weight-bold">Prolonger réservation</h3>
 					</div>
 					<div class="card-body">
-						<div class="text-center" th:each="pret : ${prets}">
+						<div class="text-center" >
 							<p>Voulez-vous prolonger le prêt de 4 semaines ?</p>
-							<a class="btn btn-success" th:href="@{'/prolonger/'+${pret.id}}">
+							<a class="btn btn-success" th:href="@{'/prolonger/'+${prets.id}}">
 								Prolonger </a>
 						</div>
 					</div>
