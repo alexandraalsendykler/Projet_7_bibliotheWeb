@@ -1,5 +1,7 @@
 package com.bibliotheque.web.repository;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -18,16 +20,16 @@ public class PretProxy {
 	@Autowired
 	private CustomProperties props;
 	
-	 public Iterable<Pret> getPrets(Integer idUtilisateur) {
+	 public Optional<Pret> getPret(Integer id) {
 	        String baseApiUrl = props.getApiUrl();
-	        String getPretsUrl = baseApiUrl + "/Prets";
+	        String getPretsUrl = baseApiUrl + "/Pret/"+id;
 
 	        RestTemplate restTemplate = new RestTemplate();
-	        ResponseEntity<Iterable<Pret>> response = restTemplate.exchange(
+	        ResponseEntity<Optional<Pret>> response = restTemplate.exchange(
 	                getPretsUrl,
 	                HttpMethod.GET,
 	                null,
-	                new ParameterizedTypeReference<Iterable<Pret>>() {}
+	                new ParameterizedTypeReference<Optional<Pret>>() {}
 	                );
 	        return response.getBody();
 }

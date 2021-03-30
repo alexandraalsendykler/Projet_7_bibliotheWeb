@@ -1,5 +1,7 @@
 package com.bibliotheque.web.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +17,12 @@ public class PretService {
 	@Autowired
 	private PretProxy pretProxy;
 	
-	public Iterable<Pret>getPrets() {
-		return pretProxy.getPrets(null);
+	public Optional<Pret> getPrets() {
+		return pretProxy.getPret(null);
+
+	}
+	public Optional<Pret> getPret(Integer id) {
+		return pretProxy.getPret(id);
 
 	}
 	
