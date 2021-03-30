@@ -14,25 +14,32 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 public class LivreProxy {
-	
+
 	@Autowired
 	private CustomProperties props;
-	
-	 public Iterable<Livre> getLivres() {
-	        String baseApiUrl = props.getApiUrl();
-	        String getLivresUrl = baseApiUrl + "/Livres";
 
-	        RestTemplate restTemplate = new RestTemplate();
-	        ResponseEntity<Iterable<Livre>> response = restTemplate.exchange(
-	                getLivresUrl,
-	                HttpMethod.GET,
-	                null,
-	                new ParameterizedTypeReference<Iterable<Livre>>() {}
-	                );
+	public Iterable<Livre> getLivres() {
+		String baseApiUrl = props.getApiUrl();
+		String getLivresUrl = baseApiUrl + "/Livres";
 
-	        // log.debug("Get Livres" + response.getStatusCode().toString());
-	        
-	        return response.getBody();
-	    }
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Iterable<Livre>> response = restTemplate.exchange(getLivresUrl, HttpMethod.GET, null,
+				new ParameterizedTypeReference<Iterable<Livre>>() {
+				});
+
+		return response.getBody();
+	}
+
+	public Iterable<Livre> getLivresSearch(String search) {
+		String baseApiUrl = props.getApiUrl();
+		String getLivresSearchUrl = baseApiUrl + "/recherchelivres/" + search;
+
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Iterable<Livre>> response = restTemplate.exchange(getLivresSearchUrl, HttpMethod.GET, null,
+				new ParameterizedTypeReference<Iterable<Livre>>() {
+				});
+
+		return response.getBody();
+	}
 
 }

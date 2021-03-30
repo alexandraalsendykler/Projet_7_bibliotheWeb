@@ -22,6 +22,10 @@ public class LivreService {
 	public Iterable<Livre> getLivres() {
 		return livreProxy.getLivres();
 	}
+	
+	public Iterable<Livre> getLivresSearch(String search) {
+		return livreProxy.getLivresSearch(search);
+	}
 /*
 	public void deleteLivre(final int id) {
 		livreProxy.deleteLivre(id);
