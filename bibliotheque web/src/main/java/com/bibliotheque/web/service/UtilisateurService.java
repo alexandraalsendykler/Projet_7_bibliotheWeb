@@ -1,5 +1,7 @@
 package com.bibliotheque.web.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,8 @@ public class UtilisateurService {
 	public Utilisateur getLogin(String email) {
 		return utilisateurProxy.getLogin(email);
 	}
+	public Optional<Utilisateur> getUtilisateur(Integer id) {
+		return utilisateurProxy.getUtilisateur(id);
 
+	}
 }
