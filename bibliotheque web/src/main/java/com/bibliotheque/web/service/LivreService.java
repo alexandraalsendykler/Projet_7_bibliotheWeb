@@ -19,12 +19,14 @@ public class LivreService {
 		return livreProxy.getlivre(id);
 	}*/
 
-	public Iterable<Livre> getLivres() {
+	public Iterable<Livre> getLivres() { 
+		// parcourir la liste de livres et pour chaque livre calculer le nombre d'exemplaires disponibles 
+		// implique dans l'objet livre que tu rajoutes un attribut nombre d'exemplaires disponibles 
 		return livreProxy.getLivres();
 	}
 	
 	public Iterable<Livre> getLivresSearch(String search) {
-		return livreProxy.getLivresSearch(search);
+		return livreProxy.getLivresSearch(search); // rajouter 
 	}
 /*
 	public void deleteLivre(final int id) {

@@ -24,8 +24,8 @@ public class LivreController {
 
 	@GetMapping("/livressearch")
 	public String livreSearch(@RequestParam(value = "search", required = true) String search, Model model) {
-		Iterable<Livre> listLivre = livreService.getLivresSearch(search);
-		model.addAttribute("livres", listLivre);
+		Iterable<Livre> listLivre = livreService.getLivresSearch(search); // 
+		model.addAttribute("livres", listLivre); 
 		return "livressearch";
 
 	}
