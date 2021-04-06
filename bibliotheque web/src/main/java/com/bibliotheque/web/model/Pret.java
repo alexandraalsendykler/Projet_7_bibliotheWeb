@@ -11,7 +11,15 @@ public class Pret {
 	private Date dateReservation;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateDeFin;
-	private Boolean disponibilite;
+	private String statut;
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
 
 	public Integer getId() {
 		return id;
@@ -20,7 +28,7 @@ public class Pret {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public Date getDateReservation() {
 		return dateReservation;
 	}
@@ -35,14 +43,6 @@ public class Pret {
 
 	public void setDateDeFin(Date dateDeFin) {
 		this.dateDeFin = dateDeFin;
-	}
-
-	public Boolean getDisponibilite() {
-		return disponibilite;
-	}
-
-	public void setDisponibilite(Boolean disponibilite) {
-		this.disponibilite = disponibilite;
 	}
 
 }
