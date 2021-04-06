@@ -35,11 +35,12 @@
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:if="${session.isEmpty()}">Inscription</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="http://localhost:8080/connexion"
-				th:if="${session.isEmpty()}">Connexion</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="http://localhost:8080/connexion" th:if="${session.isEmpty()}">Connexion</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="http://localhost:8080/profil"
-				th:unless="${session.isEmpty()}"> Profil</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="http://localhost:8080/profil" th:unless="${session.isEmpty()}">
+					Profil</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:unless="${session.isEmpty()}">Déconnexion</a></li>
@@ -69,12 +70,14 @@
 					<th>Titre</th>
 					<th>Auteur</th>
 					<th>Résumé</th>
+					<th>Exemplaires</th>
 
 				</tr>
 				<tr th:each="livre: ${livres}">
 					<td th:text="${livre.titre}"></td>
 					<td th:text="${livre.auteur}"></td>
 					<td th:text="${livre.resume}"></td>
+					<td th:text="${livre.nombreExemplaireDisponible}"></td>
 				</tr>
 			</table>
 		</div>

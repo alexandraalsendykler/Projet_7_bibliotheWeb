@@ -4,6 +4,10 @@ import java.util.List;
 
 public class Livre {
 
+	private Integer id;
+	private String titre;
+	private String auteur;
+	private String resume;
 	private List<Exemplaire> exemplaires;
 
 	public List<Exemplaire> getExemplaires() {
@@ -14,10 +18,12 @@ public class Livre {
 		this.exemplaires = exemplaires;
 	}
 
-	private Integer id;
-	private String titre;
-	private String auteur;
-	private String resume;
+	public Integer nombreExemplaireDisponible() {
+		Integer count = 0;
+
+		count = this.exemplaires.size();
+		return count;
+	}
 
 	public Integer getId() {
 		return id;
