@@ -3,8 +3,8 @@ package com.bibliotheque.web.model;
 import java.util.List;
 
 public class Exemplaire {
-
 	private List<Pret> prets;
+	private Integer id;
 
 	public List<Pret> getPrets() {
 		return prets;
@@ -13,8 +13,6 @@ public class Exemplaire {
 	public void setPrets(List<Pret> prets) {
 		this.prets = prets;
 	}
-
-	private Integer id;
 
 	public Integer getId() {
 		return id;

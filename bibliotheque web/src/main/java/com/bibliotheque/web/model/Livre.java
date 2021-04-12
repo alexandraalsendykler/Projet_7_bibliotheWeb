@@ -9,6 +9,15 @@ public class Livre {
 	private String auteur;
 	private String resume;
 	private List<Exemplaire> exemplaires;
+	private Integer nbExemplairesDisponibles;
+	
+	public Integer getNbExemplairesDisponibles() {
+		return nbExemplairesDisponibles;
+	}
+
+	public void setNbExemplairesDisponibles(Integer nbExemplairesDisponibles) {
+		this.nbExemplairesDisponibles = nbExemplairesDisponibles;
+	}
 
 	public List<Exemplaire> getExemplaires() {
 		return exemplaires;
@@ -16,13 +25,6 @@ public class Livre {
 
 	public void setExemplaires(List<Exemplaire> exemplaires) {
 		this.exemplaires = exemplaires;
-	}
-
-	public Integer nombreExemplaireDisponible() {
-		Integer count = 0;
-
-		count = this.exemplaires.size();
-		return count;
 	}
 
 	public Integer getId() {
