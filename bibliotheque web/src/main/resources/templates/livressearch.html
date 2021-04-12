@@ -52,17 +52,19 @@
 		<div class="col-sm-6 offset-sm-3">
 	<table class="table table-sm">
 
-		<tr>
-			<th>Titre</th>
-			<th>Auteur</th>
-			<th>Résumé</th>
+				<tr>
+					<th>Titre</th>
+					<th>Auteur</th>
+					<th>Résumé</th>
+					<th>Exemplaires</th>
 
-		</tr>
-		<tr th:each="livre: ${livres}">
-			<td th:text="${livre.titre}"></td>
-			<td th:text="${livre.auteur}"></td>
-			<td th:text="${livre.resume}"></td>
-		</tr>
+				</tr>
+				<tr th:each="livre: ${livres}">
+					<td th:text="${livre.titre}"></td>
+					<td th:text="${livre.auteur}"></td>
+					<td th:text="${livre.resume}"></td>
+					<td th:text="${livre.nbExemplairesDisponibles}"></td>
+				</tr>
 	</table>
 </div>
 </div>

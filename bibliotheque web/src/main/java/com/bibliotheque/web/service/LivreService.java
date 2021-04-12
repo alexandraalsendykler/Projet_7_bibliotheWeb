@@ -47,7 +47,26 @@ public class LivreService {
 	}
 
 	public Iterable<Livre> getLivresSearch(String search) {
-		return livreProxy.getLivresSearch(search); // rajouter
+		Iterable<Livre> livres = livreProxy.getLivresSearch(search);
+		for (Livre livre : livres) {
+			Integer nbExemplairesDisponibles = 0;
+			List<Exemplaire> exemplaires = livre.getExemplaires();
+			for (Exemplaire exemplaire : exemplaires) {
+				Integer count = 0;
+				List<Pret> prets = exemplaire.getPrets();
+				for (Pret pret : prets) {
+					if (pret.getStatut().equals("en cours") || pret.getStatut().equals("prolongé")) {
+						count++;
+					}
+				}
+				if (count == 0) {
+					nbExemplairesDisponibles++;
+				}
+			}
+
+			livre.setNbExemplairesDisponibles(nbExemplairesDisponibles);
+		}
+		return livres;
 	}
 
 	/*
