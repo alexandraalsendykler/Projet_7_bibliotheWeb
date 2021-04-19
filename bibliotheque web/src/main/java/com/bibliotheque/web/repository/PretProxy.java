@@ -30,6 +30,7 @@ public class PretProxy {
 				});
 		return response.getBody();
 	}
+
 	public Optional<Pret> saveProlongation(Integer id) {
 		String baseApiUrl = props.getApiUrl();
 		String getPretsUrl = baseApiUrl + "/Prolonger/" + id;
@@ -40,5 +41,5 @@ public class PretProxy {
 				});
 		return response.getBody();
 	}
-	
+
 }

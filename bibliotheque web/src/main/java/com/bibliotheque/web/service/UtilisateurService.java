@@ -20,6 +20,7 @@ public class UtilisateurService {
 	public Utilisateur getLogin(String email) {
 		return utilisateurProxy.getLogin(email);
 	}
+
 	public Optional<Utilisateur> getUtilisateur(Integer id) {
 		return utilisateurProxy.getUtilisateur(id);
 

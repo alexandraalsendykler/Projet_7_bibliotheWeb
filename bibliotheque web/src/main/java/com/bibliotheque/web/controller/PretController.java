@@ -35,7 +35,6 @@ public class PretController {
 		Optional<Pret> pret = pretService.saveProlongation(id);
 		Utilisateur utilisateur = (Utilisateur) session.getAttribute("user");
 		Optional<Utilisateur> newSessionUser = utilisateurService.getUtilisateur(id);
-
 		session.setAttribute("user", newSessionUser.get());
 		return ("redirect:/profil");
 	}

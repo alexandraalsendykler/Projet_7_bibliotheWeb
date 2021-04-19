@@ -7,9 +7,9 @@ import lombok.Data;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix="com.bibliotheque.web")
+@ConfigurationProperties(prefix = "com.bibliotheque.web")
 public class CustomProperties {
-	
+
 	private String apiUrl;
 
 	public String getApiUrl() {

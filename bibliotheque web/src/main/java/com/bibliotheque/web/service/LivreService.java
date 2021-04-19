@@ -69,21 +69,6 @@ public class LivreService {
 		return livres;
 	}
 
-	/*
-	 * public void deleteLivre(final int id) { livreProxy.deleteLivre(id); ; }
-	 * 
-	 * public Livre saveLivre(Livre livre) { Livre savedLivre;
-	 * 
-	 * // Règle de gestion : Le nom du livre doit être mis en majuscule.
-	 * 
-	 * livre.setLastName(livre.getLastName().toUpperCase());
-	 * 
-	 * if (livre.getId() == null) { // Si l'id est nul, alors c'est un nouvel
-	 * employé. savedLivre = livreProxy.createLivre(livre); } else { savedLivre =
-	 * livreProxy.updateEmployee(livre); }
-	 * 
-	 * return savedLivre; }
-	 */
 	public LivreProxy getLivreProxy() {
 		return livreProxy;
 	}

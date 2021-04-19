@@ -13,19 +13,20 @@ import lombok.Data;
 @Data
 @Service
 public class PretService {
-	
+
 	@Autowired
 	private PretProxy pretProxy;
-	
+
 	public Optional<Pret> getPrets() {
 		return pretProxy.getPret(null);
 
 	}
+
 	public Optional<Pret> getPret(Integer id) {
 		return pretProxy.getPret(id);
 
 	}
-	
+
 	public PretProxy getPretProxy() {
 		return pretProxy;
 	}
@@ -33,6 +34,7 @@ public class PretService {
 	public void setPretProxy(PretProxy pretProxy) {
 		this.pretProxy = pretProxy;
 	}
+
 	public Optional<Pret> saveProlongation(Integer id) {
 		return pretProxy.saveProlongation(id);
 
