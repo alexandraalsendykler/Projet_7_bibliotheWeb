@@ -6,11 +6,11 @@ public class Utilisateur {
 
 	private Integer id;
 	private String prenom;
+	private String nom;
 	private String email;
 	private String motDePasse;
-	
 
-	private List<Pret> prets; 
+	private List<Pret> prets;
 
 	public List<Pret> getPrets() {
 		return prets;
@@ -26,6 +26,14 @@ public class Utilisateur {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	public String getPrenom() {

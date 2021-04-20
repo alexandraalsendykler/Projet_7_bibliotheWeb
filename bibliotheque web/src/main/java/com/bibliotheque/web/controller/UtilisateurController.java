@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,5 +51,18 @@ public class UtilisateurController {
 			return "profil";
 		}
 		return ("redirect:/connexion");
+	}
+
+	@GetMapping(value = "/inscription")
+	public String inscription(Model model) {
+		model.addAttribute("users", new Utilisateur());
+		return "inscription";
+	}
+
+	@PostMapping("/saveinscription")
+	public ModelAndView saveInscription(@ModelAttribute Utilisateur user, Model model) {
+		utilisateurService.saveUtilisateur(user);
+
+		return new ModelAndView("redirect:/connexion");
 	}
 }

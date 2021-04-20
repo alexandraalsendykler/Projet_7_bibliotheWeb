@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -39,6 +40,18 @@ public class UtilisateurProxy {
 		ResponseEntity<Optional<Utilisateur>> response = restTemplate.exchange(getPretsUrl, HttpMethod.GET, null,
 				new ParameterizedTypeReference<Optional<Utilisateur>>() {
 				});
+		return response.getBody();
+	}
+
+	public Utilisateur createUtilisateur(Utilisateur utilisateur) {
+		String baseApiUrl = props.getApiUrl();
+		String createUtilisateurUrl = baseApiUrl + "/utilisateur";
+
+		RestTemplate restTemplate = new RestTemplate();
+		HttpEntity<Utilisateur> request = new HttpEntity<Utilisateur>(utilisateur);
+		ResponseEntity<Utilisateur> response = restTemplate.exchange(createUtilisateurUrl, HttpMethod.POST, request,
+				Utilisateur.class);
+
 		return response.getBody();
 	}
 }
