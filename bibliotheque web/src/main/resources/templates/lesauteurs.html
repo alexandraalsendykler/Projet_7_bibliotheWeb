@@ -23,8 +23,8 @@
 
 		<ul class="nav justify-content-end ">
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/leslivresdisponibles">Les
-					livres disponibles</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/leslivresdisponibles">Les livres disponibles</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href="/lesauteurs">Les
 					auteurs</a></li>
@@ -49,18 +49,23 @@
 	<img class=" img-fluid" th:src="@{/Img/OCbibliotheque1.jpg}" alt=""
 		style="width: 100%; height: auto">
 
-
 	<div class="row" style="margin-top: 15px">
-		<div class="col-sm-6 offset-sm-3">
-			<form action="/livressearch" method="get">
-				<h3>Rechercher un livre en utilisant le moteur de recherche
-					ci-dessous :</h3>
-				<input class="form-control mr-sm-2" type="text" name="search"
-					placeholder="Rechercher" aria-label="Rechercher"> <br>
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Envoyer</button>
-			</form>
-
-		</div>
-	</div>
+		<div class="container">
+			<div class="col-sm-6 offset-sm-3">
+				<div class="card text-center">
+					<div class="card-header">
+						<h2 class="font-weight-bold">Les auteurs disponibles</h2>
+					</div>
+					<div class="card-body">
+						<div class="card text-center">
+							<font><h4>La bibliothèque OpenClassrooms vous propose
+									de découvrir diverses et différents auteurs ! Vous pourrez en
+									autre découvrir (ou re-découvrir) Emile Zola ou comme auteur
+									plus contemporain J.K. Rowling ! Il y en a pour tous les goûts
+									!</h4> </font>
+						</div>
+					</div>
+				</div>
+			</div>
 </body>
 </html>

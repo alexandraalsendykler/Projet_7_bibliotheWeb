@@ -36,4 +36,11 @@ public class LivreController {
 		return "leslivresdisponibles";
 
 	}
+
+	@GetMapping("/lesauteurs")
+	public String lesAuteurs(Model model) {
+		return ("lesauteurs");
+
+	}
+
 }
