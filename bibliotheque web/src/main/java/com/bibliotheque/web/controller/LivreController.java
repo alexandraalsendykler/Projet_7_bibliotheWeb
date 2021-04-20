@@ -43,4 +43,8 @@ public class LivreController {
 
 	}
 
+	@GetMapping("/informations")
+	public String informations(Model model) {
+		return ("informations");
+	}
 }

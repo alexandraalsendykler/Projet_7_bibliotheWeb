@@ -17,7 +17,7 @@
 
 	<nav class="navbar navbar-light " style="background-color: #fff;">
 
-		<a class="navbar-brand" href="/Home">
+		<a class="navbar-brand" href="/">
 			<h1>Bibliothèque OpenClassrooms</h1>
 		</a>
 
@@ -26,11 +26,11 @@
 			<li class="nav-item"><a class="nav-link text-dark"
 				href="/leslivresdisponibles">Les livres disponibles</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/lesauteurs">Les
-					auteurs</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/lesauteurs">Les auteurs</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="">A
-					propos</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/informations">Informations</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:if="${session.isEmpty()}">Inscription</a></li>
@@ -52,6 +52,7 @@
 	<div class="row" style="margin-top: 15px">
 		<div class="container">
 			<div class="col-sm-6 offset-sm-3">
+				<br>
 				<div class="card text-center">
 					<div class="card-header">
 						<h2 class="font-weight-bold">Les auteurs disponibles</h2>

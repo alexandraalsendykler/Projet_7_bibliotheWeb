@@ -23,23 +23,24 @@
 
 		<ul class="nav justify-content-end ">
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/leslivresdisponibles">Les
-					livres disponibles</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/leslivresdisponibles">Les livres disponibles</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/lesauteurs">Les
-					auteurs</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/lesauteurs">Les auteurs</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="">A
-					propos</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/informations">Informations</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:if="${session.isEmpty()}">Inscription</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="http://localhost:8080/connexion"
-				th:if="${session.isEmpty()}">Connexion</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="http://localhost:8080/connexion" th:if="${session.isEmpty()}">Connexion</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="http://localhost:8080/profil"
-				th:unless="${session.isEmpty()}"> Profil</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="http://localhost:8080/profil" th:unless="${session.isEmpty()}">
+					Profil</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:unless="${session.isEmpty()}">Déconnexion</a></li>
@@ -48,9 +49,9 @@
 	<img class=" img-fluid" th:src="@{/Img/OCbibliotheque1.jpg}" alt=""
 		style="width: 100%; height: auto">
 
-<div class="row" style="margin-top: 15px">
+	<div class="row" style="margin-top: 15px">
 		<div class="col-sm-6 offset-sm-3">
-	<table class="table table-sm">
+			<table class="table table-sm">
 
 				<tr>
 					<th>Titre</th>
@@ -65,8 +66,8 @@
 					<td th:text="${livre.resume}"></td>
 					<td th:text="${livre.nbExemplairesDisponibles}"></td>
 				</tr>
-	</table>
-</div>
-</div>
+			</table>
+		</div>
+	</div>
 </body>
 </html>
