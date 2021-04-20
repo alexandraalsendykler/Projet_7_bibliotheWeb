@@ -29,4 +29,11 @@ public class LivreController {
 
 	}
 
+	@GetMapping("/leslivresdisponibles")
+	public String lesLivresDisponibles(Model model) {
+		Iterable<Livre> listLivre = livreService.getLivres();
+		model.addAttribute("livres", listLivre);
+		return "leslivresdisponibles";
+
+	}
 }

@@ -30,7 +30,7 @@ public class LivreService {
 			List<Exemplaire> exemplaires = livre.getExemplaires();
 			for (Exemplaire exemplaire : exemplaires) {
 				Integer count = 0;
-				List<Pret> prets = exemplaire.getPrets();
+				Iterable<Pret> prets = exemplaire.getPrets();
 				for (Pret pret : prets) {
 					if (pret.getStatut().equals("en cours") || pret.getStatut().equals("prolongé")) {
 						count++;
@@ -53,7 +53,7 @@ public class LivreService {
 			List<Exemplaire> exemplaires = livre.getExemplaires();
 			for (Exemplaire exemplaire : exemplaires) {
 				Integer count = 0;
-				List<Pret> prets = exemplaire.getPrets();
+				Iterable<Pret> prets = exemplaire.getPrets();
 				for (Pret pret : prets) {
 					if (pret.getStatut().equals("en cours") || pret.getStatut().equals("prolongé")) {
 						count++;

@@ -17,13 +17,13 @@
 
 	<nav class="navbar navbar-light " style="background-color: #fff;">
 
-		<a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="/Home">
 			<h1>Bibliothèque OpenClassrooms</h1>
 		</a>
 
 		<ul class="nav justify-content-end ">
 
-			<li class="nav-item"><a class="nav-link text-dark" href="">Les
+			<li class="nav-item"><a class="nav-link text-dark" href="/leslivresdisponibles">Les
 					livres disponibles</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href="">Les
@@ -46,7 +46,7 @@
 				th:unless="${session.isEmpty()}">Déconnexion</a></li>
 		</ul>
 	</nav>
-	<img class=" img-fluid" th:src="@{/Img/testlivre.jpg}" alt=""
+	<img class=" img-fluid" th:src="@{/Img/OCbibliotheque1.jpg}" alt=""
 		style="width: 100%; height: auto">
 
 
@@ -60,26 +60,6 @@
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Envoyer</button>
 			</form>
 
-		</div>
-	</div>
-	<div class="row" style="margin-top: 15px">
-		<div class="col-sm-6 offset-sm-3">
-			<table class="table table-sm">
-
-				<tr>
-					<th>Titre</th>
-					<th>Auteur</th>
-					<th>Résumé</th>
-					<th>Exemplaires</th>
-
-				</tr>
-				<tr th:each="livre: ${livres}">
-					<td th:text="${livre.titre}"></td>
-					<td th:text="${livre.auteur}"></td>
-					<td th:text="${livre.resume}"></td>
-					<td th:text="${livre.nbExemplairesDisponibles}"></td>
-				</tr>
-			</table>
 		</div>
 	</div>
 </body>
