@@ -65,4 +65,10 @@ public class UtilisateurController {
 
 		return new ModelAndView("redirect:/connexion");
 	}
+
+	@GetMapping(value = "/deconnexion")
+	public String deconnexionProfil(Model model, HttpSession session) {
+		session.invalidate();
+		return ("deconnexion");
+	}
 }
