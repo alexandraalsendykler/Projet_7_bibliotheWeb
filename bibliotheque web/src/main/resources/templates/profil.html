@@ -32,8 +32,8 @@
 			<li class="nav-item"><a class="nav-link text-dark"
 				href="/informations">Informations</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/inscription"
-				th:if="${session.isEmpty()}">Inscription</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/inscription" th:if="${session.isEmpty()}">Inscription</a></li>
 
 			<li class="nav-item"><a class="nav-link text-dark" href=""
 				th:if="${session.isEmpty()}">Connexion</a></li>
@@ -42,8 +42,8 @@
 				href="http://localhost:8080/profil" th:unless="${session.isEmpty()}">
 					Profil</a></li>
 
-			<li class="nav-item"><a class="nav-link text-dark" href="/deconnexion"
-				th:unless="${session.isEmpty()}">Déconnexion</a></li>
+			<li class="nav-item"><a class="nav-link text-dark"
+				href="/deconnexion" th:unless="${session.isEmpty()}">Déconnexion</a></li>
 		</ul>
 
 	</nav>
@@ -74,10 +74,18 @@
 									<td
 										th:text="${#dates.format(pret.dateReservation, 'dd/MM/yyyy')}"></td>
 									<td th:text="${#dates.format(pret.dateDeFin, 'dd/MM/yyyy')}"></td>
-									<td><a class="btn btn-success"
-										th:href="@{'/confirmationprolongation/'+${pret.id}}">
-											Prolonger</a>
-									<td>
+									<th:block th:if="${pret.statut == 'en cours'}">
+										<td><a class="btn btn-success"
+											th:href="@{'/confirmationprolongation/'+${pret.id}}">
+												Prolonger</a>
+										<td>
+									</th:block>
+									<th:block th:unless="${pret.statut == 'en cours'}">
+										<td><a class="btn btn-secondary disabled"
+											th:href="@{'/confirmationprolongation/'+${pret.id}}" >
+												Prolonger</a>
+										<td>
+									</th:block>
 								</tr>
 							</table>
 
