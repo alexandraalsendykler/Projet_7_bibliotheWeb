@@ -1,7 +1,5 @@
 package com.bibliotheque.web.model;
 
-import java.util.List;
-
 public class Exemplaire {
 	private Iterable<Pret> prets;
 	private Integer id;

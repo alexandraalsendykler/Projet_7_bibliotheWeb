@@ -70,7 +70,7 @@
 
 								</tr>
 								<tr th:each="pret: ${connectedUser.prets}">
-									<td><a th:href="@{'/pret/'+${pret.id}}">Prêt</a></td>
+									<td th:text="${pret.id}"></td> <!-- remplacer pret.id par par le nom du livre -->
 									<td
 										th:text="${#dates.format(pret.dateReservation, 'dd/MM/yyyy')}"></td>
 									<td th:text="${#dates.format(pret.dateDeFin, 'dd/MM/yyyy')}"></td>
